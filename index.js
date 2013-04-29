@@ -16,7 +16,7 @@ var Weixin = function() {
 Weixin.prototype.checkSignature = function(req) {    		
 	
 	// 获取校验参数
-	this.signatures = req.query.signature,
+	this.signature = req.query.signature,
 	this.timestamp = req.query.timestamp,
 	this.nonce = req.query.nonce,
 	this.echostr = req.query.echostr;
