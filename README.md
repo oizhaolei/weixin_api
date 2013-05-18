@@ -1,14 +1,9 @@
 weixin-api
 ==========
 
-微信公众API For Node.js
+微信公众平台[消息接口](http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97)的Node.js实现。
 
-说明
-===========
-
-此package是针对微信公众平台[消息接口](http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97)的实现。
-
-普通安装
+Installation
 ===========
 
 如果你使用node进行开发，那么安装很简单：
@@ -16,7 +11,7 @@ weixin-api
   npm install weixin-api
 ```
 
-配合express使用
+Express
 ===========
 
 如果你需要使用express开发微信公众平台应用，那么首先安装express
@@ -43,7 +38,7 @@ weixin-api
     "express": "3.1.1",
     "jade": "*",
 	"xml2js" : "0.2.6",
-	"weixin-api" : ">=0.1.3"
+	"weixin-api" : ">=0.1.4"
   }
 }
 ```
@@ -53,7 +48,18 @@ weixin-api
 	npm install
 ```
 
-实例
+Features
+===========
+* token校验
+* 消息推送：文本消息，图片消息，地理位置消息，链接消息，事件推送
+* 消息回复：文本消息，音乐消息，图文消息
+
+Links
+===========
+
+* [微信API For Node.js](http://weizhifeng.net/weixin-with-node.js.html)
+
+Example
 ===========
 
 ```javascript
@@ -88,24 +94,26 @@ weixin.textMsg(function(msg) {
 
 	switch (msg.content) {
 		case "文本" :
+			// 返回文本消息
 			resMsg = {
 				fromUserName : msg.toUserName,
 				toUserName : msg.fromUserName,
 				msgType : "text",
-				content : "(╯°□°）╯︵ ┻━┻",
+				content : "这是文本回复",
 				funcFlag : 0
 			};
 			break;
 	
 		case "音乐" :
+			// 返回音乐消息
 			resMsg = {
 				fromUserName : msg.toUserName,
 				toUserName : msg.fromUserName,
 				msgType : "music",
-				title : "向往",
-				description : "李健《向往》",
-				musicUrl : "",
-				HQMusicUrl : "",
+				title : "音乐标题",
+				description : "音乐描述",
+				musicUrl : "音乐url",
+				HQMusicUrl : "高质量音乐url",
 				funcFlag : 0
 			};
 			break;
@@ -149,28 +157,24 @@ weixin.textMsg(function(msg) {
 
 // 监听图片消息
 weixin.imageMsg(function(msg) {
-	//
 	console.log("imageMsg received");
 	console.log(JSON.stringify(msg));
 });
 
 // 监听位置消息
 weixin.locationMsg(function(msg) {
-	//
 	console.log("locationMsg received");
 	console.log(JSON.stringify(msg));
 });
 
 // 监听链接消息
 weixin.urlMsg(function(msg) {
-	//
 	console.log("urlMsg received");
 	console.log(JSON.stringify(msg));
 });
 
 // 监听事件消息
 weixin.eventMsg(function(msg) {
-	//
 	console.log("eventMsg received");
 	console.log(JSON.stringify(msg));
 });
@@ -185,16 +189,6 @@ app.post('/', function(req, res) {
 
 app.listen(3000);
 ```
-
-作者
-===========
-JeremyWei
-
-![JeremyWei](http://weizhifeng.net/images/qrcode_jeremywei.jpg "JeremyWei")
-
-
-* [微博](http://weibo.com/jeremywei)
-* [主页](http://weizhifeng.net)
 
 LICENSE
 ===========
