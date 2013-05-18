@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/JeremyWei/weixin_api.png)](https://travis-ci.org/JeremyWei/weixin_api)
 weixin-api
 ==========
 
