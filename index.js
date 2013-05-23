@@ -250,11 +250,11 @@ Weixin.prototype.sendMusicMsg = function(msg) {
 		 "<CreateTime>" + time + "</CreateTime>" + 
 		 "<MsgType><![CDATA[" + msg.msgType + "]]></MsgType>" + 
 	 	 "<Music>" + 
-	 	 "<Title><![CDATA[" + msg.title + "]]></Title>"
-	 	 "<Description><![CDATA[" + msg.description + "DESCRIPTION]]></Description>"
-	 	 "<MusicUrl><![CDATA[" + msg.musicUrl + "]]></MusicUrl>"
-	 	 "<HQMusicUrl><![CDATA[" + msg.HQMusicUrl + "]]></HQMusicUrl>"
-	 	 "</Music>"
+	 	 "<Title><![CDATA[" + msg.title + "]]></Title>" + 
+	 	 "<Description><![CDATA[" + msg.description + "DESCRIPTION]]></Description>" + 
+	 	 "<MusicUrl><![CDATA[" + msg.musicUrl + "]]></MusicUrl>" + 
+	 	 "<HQMusicUrl><![CDATA[" + msg.HQMusicUrl + "]]></HQMusicUrl>" + 
+	 	 "</Music>" + 
 		 "<FuncFlag>" + funcFlag + "</FuncFlag>" + 
 	"</xml>";
 	
