@@ -6,7 +6,7 @@
   },
   "name": "weixin-api",
   "description": "微信公众平台API",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/JeremyWei/weixin_api",
   "repository": {
     "type": "git",

@@ -39,7 +39,7 @@ Express
     "express": "3.1.1",
     "jade": "*",
 	"xml2js" : "0.2.6",
-	"weixin-api" : ">=0.1.4"
+	"weixin-api" : ">=0.1.5"
   }
 }
 ```
