@@ -4,6 +4,10 @@ weixin-api
 
 微信公众平台[消息接口](http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97)的Node.js实现。
 
+Important!
+===========
+本项的目的是让开发者很够快速的构建一个微信的app，目前只支持微信API中消息的发送和接收，如果你的项目需要微信其他高级API的功能，请使用[wechat](https://github.com/node-webot/wechat)，谢谢。
+
 Installation
 ===========
 
