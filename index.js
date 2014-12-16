@@ -194,7 +194,6 @@ Weixin.prototype.parseLinkMsg = function() {
  * EventKey 事件KEY值，与自定义菜单接口中KEY值对应
  */
 Weixin.prototype.parseEventMsg = function() {
-	console.log(this.data);
 	var eventKey = '';
 	if (this.data.EventKey) {
 		eventKey = this.data.EventKey[0];
