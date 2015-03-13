@@ -239,13 +239,13 @@ Weixin.prototype.parseVoiceMsg = function () {
         "fromUserName": this.data.FromUserName[0],
         "createTime": this.data.CreateTime[0],
         "msgType": this.data.MsgType[0],
-        "mediaID": this.data.MediaID[0],
-        "format": this.data.Format[0],
         "msgID": this.data.MsgID[0]
     };
 
     if (this.data.Recognition) {
         msg.recognition = this.data.Recognition[0];
+        msg.mediaID = this.data.MediaID[0];
+        msg.format = this.data.Format[0];
     }
 
     emitter.emit("weixinVoiceMsg", msg);
