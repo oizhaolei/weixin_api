@@ -77,6 +77,14 @@ Weixin.prototype.eventMsg = function (callback) {
     return this;
 };
 
+// 监听事件
+Weixin.prototype.voiceMsg = function (callback) {
+
+    emitter.on("weixinVoiceMsg", callback);
+
+    return this;
+};
+
 // ----------------- 消息处理 -----------------------
 /*
  * 文本消息格式：
@@ -214,6 +222,34 @@ Weixin.prototype.parseEventMsg = function () {
     return this;
 };
 
+/*
+ * 语音消息格式：
+ * ToUserName	开发者微信号
+ * FromUserName	 发送方帐号（一个OpenID）
+ * CreateTime	 消息创建时间 （整型）
+ * MsgType	 voice
+ * MediaID  语音消息媒体id，可以调用多媒体文件下载接口拉取该媒体
+ * Format   语音格式：amr
+ * Recognition  语音识别结果，UTF8编码
+ * MsgID    消息id，64位整型
+ */
+Weixin.prototype.parseVoiceMsg = function () {
+    var msg = {
+        "toUserName": this.data.ToUserName[0],
+        "fromUserName": this.data.FromUserName[0],
+        "createTime": this.data.CreateTime[0],
+        "msgType": this.data.MsgType[0],
+        "mediaID": this.data.MediaID[0],
+        "format": this.data.Format[0],
+        "recognition": this.data.Recognition[0],
+        "msgID": this.data.MsgID[0]
+    };
+
+    emitter.emit("weixinVoiceMsg", msg);
+
+    return this;
+};
+
 // --------------------- 消息返回 -------------------------
 // 返回文字信息
 Weixin.prototype.sendTextMsg = function (msg) {
@@ -322,6 +358,9 @@ Weixin.prototype.parse = function () {
 
         case 'event' :
             this.parseEventMsg();
+            break;
+        case 'voice' :
+            this.parseVoiceMsg();
             break;
     }
 };
