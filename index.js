@@ -241,9 +241,12 @@ Weixin.prototype.parseVoiceMsg = function () {
         "msgType": this.data.MsgType[0],
         "mediaID": this.data.MediaID[0],
         "format": this.data.Format[0],
-        "recognition": this.data.Recognition[0],
         "msgID": this.data.MsgID[0]
     };
+
+    if (this.data.Recognition) {
+        msg.recognition = this.data.Recognition[0];
+    }
 
     emitter.emit("weixinVoiceMsg", msg);
 
@@ -359,6 +362,7 @@ Weixin.prototype.parse = function () {
         case 'event' :
             this.parseEventMsg();
             break;
+
         case 'voice' :
             this.parseVoiceMsg();
             break;
