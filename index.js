@@ -381,6 +381,9 @@ Weixin.prototype.sendMsg = function (msg) {
         case 'news' :
             this.sendNewsMsg(msg);
             break;
+        case 'empty' :     // 发送空信息，向微信服务器表示”收到了，不要重复发消息了“之用
+            this.sendEmptyMsg();
+            break;
     }
 };
 // 发送空信息，向微信服务器表示”收到了，不要重复发消息了“之用
