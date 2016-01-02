@@ -383,6 +383,10 @@ Weixin.prototype.sendMsg = function (msg) {
             break;
     }
 };
+// 发送空信息，向微信服务器表示”收到了，不要重复发消息了“之用
+Weixin.prototype.sendEmptyMsg = function () {
+    this.res.send('success');
+};
 
 // Loop
 Weixin.prototype.loop = function (req, res) {
