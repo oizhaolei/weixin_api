@@ -1,20 +1,19 @@
 {
     "author": {
-        "name": "NeoLi",
-        "email": "hbbpbb@gmail.com",
-        "url": "http://lipengbo.com"
+        "name": "oizhaolei",
+        "email": "oizhaolei@gmail.com"
     },
-    "name": "hbb-weixin-api",
+    "name": "weixin-api",
     "description": "微信公众平台API",
     "version": "0.2.1",
-    "homepage": "https://github.com/hbbpb/weixin_api",
+    "homepage": "https://github.com/oizhaolei/weixin_api",
     "repository": {
         "type": "git",
-        "url": "git://github.com/hbbpb/weixin_api.git"
+        "url": "git://github.com/oizhaolei/weixin_api.git"
     },
     "bugs": {
-        "url": "https://github.com/hbbpb/weixin_api/issues",
-        "email": "hbbpbb@gmail.com"
+        "url": "https://github.com/oizhaolei/weixin_api/issues",
+        "email": "oizhaolei@gmail.com"
     },
     "license": "MIT",
     "dependencies": {
