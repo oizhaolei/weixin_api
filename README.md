@@ -13,7 +13,7 @@ Installation
 
 如果你使用node进行开发，那么安装很简单：
 ```bash
-  npm install weixin-api
+  npm install oizhaolei/weixin_api
 ```
 
 Express
@@ -42,8 +42,8 @@ Express
   "dependencies": {
     "express": "3.1.1",
     "jade": "*",
-	"xml2js" : "0.2.6",
-	"weixin-api" : ">=0.1.6"
+    "xml2js" : "0.2.6",
+    "weixin-api": "oizhaolei/weixin_api"
   }
 }
 ```
